@@ -2,7 +2,7 @@ table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin: 20px;
   border-radius: 4px;
 }
 
@@ -28,7 +28,7 @@ button {
   padding: 12px 24px;
   width: 100%;
   line-height: 1.5;
-  margin-top: 20px;
+  margin: 20px;
 }
 .styled-link {
   font-size: 16px;
@@ -42,7 +42,7 @@ button {
   display: block;
   padding: 12px 24px;
   width: 100%;
-  margin-top: 10px;
+  margin: 20px;
 }
 .styled-link:hover {
   background-color:  #45a049; 
