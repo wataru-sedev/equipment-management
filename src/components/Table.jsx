@@ -23,12 +23,13 @@ export const Table = ()=>{
     const db = getFirestore(app);
 
     const [equipments, setEquipments] = useState([
-        {name:"TOILET_PAPER", japaneseName:"トイレットペーパー", num:"2袋",quantity:"",},
-        {name:"CHOPSTICKS", japaneseName:"箸", num:"2袋",quantity:"",},
+        {name:"TOILET_PAPER", japaneseName:"トイレットペーパー", num:"3袋",quantity:"",},
+        {name:"CHOPSTICKS", japaneseName:"箸", num:"8袋",quantity:"",},
         {name:"CHOPSTICKS_BAG", japaneseName:"箸袋", num:"10袋",quantity:"",},
         {name:"STRAW", japaneseName:"ストロー", num:"1箱",quantity:"",},
         {name:"BLACK_BAG", japaneseName:"汚物袋(黒)", num:"1箱",quantity:"",},
-        {name:"ALCOHOL_PAPER", japaneseName:"アルコールペーパー", num:"8袋",quantity:"",},
+        {name:"ALCOHOL_PAPER", japaneseName:"アルコールペーパー", num:"10袋",quantity:"",},
+        {name:"WET_TOWEL", japaneseName:"おしぼり", num:"2袋",quantity:"",},
         {name:"TUMAYOUZI", japaneseName:"つまようじ", num:"1箱",quantity:"",},
         {name:"ITTOCO", japaneseName:"イットコ", num:"10個",quantity:"",},
         {name:"CHILDREN_CHOPSTICKS", japaneseName:"子割りばし", num:"1袋",quantity:"",},
@@ -105,8 +106,8 @@ export const Table = ()=>{
             </table>
             <div>
                 <button onClick={ onClickQuantityComplete }>入力完了</button>
-                <a className="styled-link" target="_blank" rel="noopener noreferrer" href="https://script.google.com/macros/s/AKfycbxcyvAO7DoQjxn7HJ8GkWCwDemZpvQ-R3ZXHKp3faek3axEXstG3S3Pfy65L9BIHUXy/exec">店長に送信</a>
+                <a className="styled-link" target="_blank" rel="noopener noreferrer" href="https://script.google.com/macros/s/AKfycbxDpzgeKl4T7olwtBGdrPgBGDxoFMd9weufG9icir1m4CQtbYGwVWdPvHalrVUThGR_/exec">店長に送信</a>
             </div>
         </>
     )
-}
+}   
