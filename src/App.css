@@ -50,18 +50,9 @@ button {
 }
 
 @media (max-width: 768px) {
-  .table-container {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-  }
-  .button-container {
-    flex-direction: column;
-    gap: 5px;
-  }
-  
   table {
-      width: 95%;
-      border-collapse: collapse;
+    width: 90%;
+    border-collapse: collapse;
   }
 
   th, td {
