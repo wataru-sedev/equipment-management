@@ -19,7 +19,7 @@ input[type="number"] {
   border-radius: 4px;
 }
 button {
-  font-size: 16px;;
+  font-size: 16px;
   font-weight: bold;
   color: white;
   background-color: #2385d4;
@@ -47,4 +47,77 @@ button {
 }
 .styled-link:hover {
   background-color:  #45a049; 
+}
+
+@media (max-width: 768px) {
+  .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+  }
+  .button-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  th, td {
+    min-width: 80px; 
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+
+  td:first-child, th:first-child {
+    width: 40%;
+  }
+
+  td:nth-child(2), th:nth-child(2) {
+    width: 20%;
+    min-width: 120px; 
+  }
+  td:nth-child(3), th:nth-child(3) {
+    width: 20%;
+    min-width: 120px; 
+  }
+  td:nth-child(4), th:nth-child(4) {
+    width: 20%;
+    min-width: 120px; 
+  }
+  
+  td button {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+  }
+
+  input[type="number"] {
+    width: 80%;
+    max-width: 80px;
+    font-size: 16px;  
+    padding: 8px 4px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .styled-link {
+    font-size: 16px;
+    background-color: #4CAF50; 
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 10px 24px;
+    width: 85%;
+  }
+  
 }
