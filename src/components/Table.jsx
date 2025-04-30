@@ -51,7 +51,14 @@ export const Table = ()=>{
         }
     }
     
-
+    const onClickInputOneHundred =()=>{
+        equipments.forEach((item) => {
+            item.quantity = 100;
+        })
+        const newEquipments = [...equipments];
+        setEquipments(newEquipments);
+    }
+    
     const onChangequantityValue =(index, value)=>{
         equipments[index].quantity = parseInt(value); 
         const newEquipments = [...equipments];
@@ -83,6 +90,7 @@ export const Table = ()=>{
     
     return(
         <>
+            <button onClick={onClickInputOneHundred} style={{backgroundColor:"teal"}} >全てに100を入力</button>
             <table>
                 <thead>
                 <tr>
@@ -92,16 +100,16 @@ export const Table = ()=>{
                 </tr>
                 </thead>
                 <tbody>
-                {equipments.map((item, index)=>{
-                    const {japaneseName, num,quantity} = item;
-                    return(
-                        <tr key={japaneseName}>
-                            <td>{japaneseName}</td>
-                            <td>{num}</td>
-                            <td><input type="number" value={quantity}  onChange={(e) => onChangequantityValue(index, e.target.value)}/></td>
-                        </tr>
-                    )
-                })}
+                    {equipments.map((item, index)=>{
+                        const {japaneseName, num, quantity} = item;
+                        return(
+                            <tr key={japaneseName}>
+                                <td>{japaneseName}</td>
+                                <td>{num}</td>
+                                <td><input type="number" value={quantity}  onChange={(e) => onChangequantityValue(index, e.target.value)}/></td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
             <div>
