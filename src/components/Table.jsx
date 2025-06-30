@@ -7,6 +7,7 @@ import {
   doc,
   setDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { toast } from "sonner";
 
 export const Table = ()=>{
     const firebaseConfig = {
@@ -23,13 +24,13 @@ export const Table = ()=>{
     const db = getFirestore(app);
 
     const [equipments, setEquipments] = useState([
-        {name:"TOILET_PAPER", japaneseName:"トイレットペーパー", num:"3袋",quantity:"",},
         {name:"CHOPSTICKS", japaneseName:"箸", num:"8袋",quantity:"",},
         {name:"CHOPSTICKS_BAG", japaneseName:"箸袋", num:"10袋",quantity:"",},
+        {name:"WET_TOWEL", japaneseName:"おしぼり", num:"2袋",quantity:"",},
+        {name:"TOILET_PAPER", japaneseName:"トイレットペーパー", num:"3袋",quantity:"",},
         {name:"STRAW", japaneseName:"ストロー", num:"1箱",quantity:"",},
         {name:"BLACK_BAG", japaneseName:"汚物袋(黒)", num:"1箱",quantity:"",},
         {name:"ALCOHOL_PAPER", japaneseName:"アルコールペーパー", num:"10袋",quantity:"",},
-        {name:"WET_TOWEL", japaneseName:"おしぼり", num:"2袋",quantity:"",},
         {name:"TUMAYOUZI", japaneseName:"つまようじ", num:"1箱",quantity:"",},
         {name:"ITTOCO", japaneseName:"イットコ", num:"10個",quantity:"",},
         {name:"CHILDREN_CHOPSTICKS", japaneseName:"子割りばし", num:"1袋",quantity:"",},
@@ -82,7 +83,7 @@ export const Table = ()=>{
             });
             await batch.commit();
         
-            alert("在庫データを更新しました");
+            alert('在庫データを更新しました');
           } catch (error) {
             console.error("更新エラー:", error);
           }
