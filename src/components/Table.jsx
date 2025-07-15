@@ -7,7 +7,6 @@ import {
   doc,
   setDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
-import { toast } from "sonner";
 
 export const Table = ()=>{
     const firebaseConfig = {
@@ -35,6 +34,7 @@ export const Table = ()=>{
         {name:"ITTOCO", japaneseName:"イットコ", num:"10個",quantity:"",},
         {name:"CHILDREN_CHOPSTICKS", japaneseName:"子割りばし", num:"1袋",quantity:"",},
         {name:"TOILET_QUICKLE", japaneseName:"トイレクイックル", num:"5袋",quantity:"",},
+        {name:"HURIKAKE", japaneseName:"ふりかけ", num:"1/2袋",quantity:"",},
     ]);
 
     const initializeInventory = async () => {
@@ -51,7 +51,7 @@ export const Table = ()=>{
             }
         }
     }
-    
+
     const onClickInputOneHundred =()=>{
         equipments.forEach((item) => {
             item.quantity = 100;
@@ -60,7 +60,7 @@ export const Table = ()=>{
         setEquipments(newEquipments);
     }
     
-    const onChangequantityValue =(index, value)=>{
+    const onChangeQuantityValue =(index, value)=>{
         equipments[index].quantity = parseInt(value); 
         const newEquipments = [...equipments];
         setEquipments(newEquipments);
@@ -107,7 +107,7 @@ export const Table = ()=>{
                             <tr key={japaneseName}>
                                 <td>{japaneseName}</td>
                                 <td>{num}</td>
-                                <td><input type="number" value={quantity}  onChange={(e) => onChangequantityValue(index, e.target.value)}/></td>
+                                <td><input type="number" value={quantity}  onChange={(e) => onChangeQuantityValue(index, e.target.value)}/></td>
                             </tr>
                         )
                     })}
