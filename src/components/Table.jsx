@@ -7,6 +7,7 @@ import {
   doc,
   setDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { toast } from "sonner";
 
 export const Table = ()=>{
     const firebaseConfig = {
@@ -69,7 +70,7 @@ export const Table = ()=>{
     const onClickQuantityComplete = async () => {
         const hasEmptyField = equipments.some((item) => {
             if (item.quantity === "") {
-              alert("入力されていない項目があります。");
+              toast.error("入力されていない項目があります。");
               return true;
             }
             return false;
@@ -83,7 +84,7 @@ export const Table = ()=>{
             });
             await batch.commit();
         
-            alert('在庫データを更新しました');
+            toast.success('在庫データを更新しました');
           } catch (error) {
             console.error("更新エラー:", error);
           }
